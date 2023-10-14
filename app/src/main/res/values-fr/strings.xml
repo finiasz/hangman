@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pendu</string>
+    <string name="cancel">Annuler</string>
+    <string name="ok">OK</string>
+    <string name="reload_confirmation">Tirer un nouveau mot ?</string>
+    <string name="settings_min_length">Taille min.</string>
+    <string name="settings_max_length">Taille max.</string>
+    <string name="settings_show_first_letter">Donner la première lettre</string>
+    <string name="settings_show_last_letter">Donner la dernière lettre</string>
+    <string name="settings_number_of_attempts">Nombre d\'essais</string>
+    <string name="label_dictionary">Dictionnaire</string>
+    <string name="label_words">Nombre de mots :</string>
+    <string name="default_dictionary">fr_l</string>
+    <string name="reveal_letter">Afficher une lettre au hasard</string>
+    <string name="discard_letter">Éliminer une lettre inutilisée</string>
+    <string name="settings_discard_letters">Éliminer des lettres</string>
+</resources>

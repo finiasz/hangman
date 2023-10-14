@@ -1,0 +1,155 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "76b1fae83b8f748dd080fc9e4ec90720",
+    "entities": [
+      {
+        "tableName": "word",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mot` TEXT NOT NULL, `longueur` INTEGER NOT NULL, `fr_xs` INTEGER NOT NULL, `fr_m` INTEGER NOT NULL, `fr_l` INTEGER NOT NULL, `fr_xxl` INTEGER NOT NULL, `en_xs` INTEGER NOT NULL, `en_s` INTEGER NOT NULL, `en_l` INTEGER NOT NULL, PRIMARY KEY(`mot`))",
+        "fields": [
+          {
+            "fieldPath": "mot",
+            "columnName": "mot",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longueur",
+            "columnName": "longueur",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fr_xs",
+            "columnName": "fr_xs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fr_m",
+            "columnName": "fr_m",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fr_l",
+            "columnName": "fr_l",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fr_xxl",
+            "columnName": "fr_xxl",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "en_xs",
+            "columnName": "en_xs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "en_s",
+            "columnName": "en_s",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "en_l",
+            "columnName": "en_l",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "mot"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_word_longueur",
+            "unique": false,
+            "columnNames": [
+              "longueur"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_word_longueur` ON `${TABLE_NAME}` (`longueur`)"
+          },
+          {
+            "name": "index_word_fr_xs",
+            "unique": false,
+            "columnNames": [
+              "fr_xs"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_word_fr_xs` ON `${TABLE_NAME}` (`fr_xs`)"
+          },
+          {
+            "name": "index_word_fr_m",
+            "unique": false,
+            "columnNames": [
+              "fr_m"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_word_fr_m` ON `${TABLE_NAME}` (`fr_m`)"
+          },
+          {
+            "name": "index_word_fr_l",
+            "unique": false,
+            "columnNames": [
+              "fr_l"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_word_fr_l` ON `${TABLE_NAME}` (`fr_l`)"
+          },
+          {
+            "name": "index_word_fr_xxl",
+            "unique": false,
+            "columnNames": [
+              "fr_xxl"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_word_fr_xxl` ON `${TABLE_NAME}` (`fr_xxl`)"
+          },
+          {
+            "name": "index_word_en_xs",
+            "unique": false,
+            "columnNames": [
+              "en_xs"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_word_en_xs` ON `${TABLE_NAME}` (`en_xs`)"
+          },
+          {
+            "name": "index_word_en_s",
+            "unique": false,
+            "columnNames": [
+              "en_s"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_word_en_s` ON `${TABLE_NAME}` (`en_s`)"
+          },
+          {
+            "name": "index_word_en_l",
+            "unique": false,
+            "columnNames": [
+              "en_l"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_word_en_l` ON `${TABLE_NAME}` (`en_l`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '76b1fae83b8f748dd080fc9e4ec90720')"
+    ]
+  }
+}

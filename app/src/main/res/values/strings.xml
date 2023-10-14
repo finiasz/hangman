@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Hangman</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="reload_confirmation">Pick a new word?</string>
+    <string name="settings_min_length">Min. length</string>
+    <string name="settings_max_length">Max. length</string>
+    <string name="settings_show_first_letter">Show first letter</string>
+    <string name="settings_show_last_letter">Show last letter</string>
+    <string name="settings_number_of_attempts">Number of attempts</string>
+    <string name="label_dictionary">Dictionary</string>
+    <string name="label_words">Word count:</string>
+    <string name="default_dictionary">en_l</string>
+    <string name="reveal_letter">Reveal a random letter</string>
+    <string name="discard_letter">Discard an unused letter</string>
+    <string name="settings_discard_letters">Discard letters</string>
+</resources>
