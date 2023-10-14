@@ -6,6 +6,6 @@ many bad guesses will get you hanged!
 This version features word lists of different sizes (4 French, 3 English)
 and several options:
 - minimum/maximum word length
-- free letteres
+- free letters
 - automatically eliminate some unused letters
 - number of attempts allowed
