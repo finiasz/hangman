@@ -583,8 +583,9 @@ fun Lettre(char: Char, letterStates : MutableList<LetterState>, voyelles : List<
     val lettrePos = char - 'A'
     Box(modifier = Modifier
         .size(sizes.letterSizeDp.dp)
+        .alpha(if (letterStates[lettrePos] == HINT_ABSENT) .4f else 1f)
         .then(
-            if (letterStates[lettrePos] != UNKNOWN)
+            if (letterStates[lettrePos] != UNKNOWN && letterStates[lettrePos] != HINT_ABSENT)
                 Modifier.clip(RoundedCornerShape(4.dp))
             else
                 Modifier.border(
@@ -596,26 +597,26 @@ fun Lettre(char: Char, letterStates : MutableList<LetterState>, voyelles : List<
         .background(
             color =
             when (letterStates[lettrePos]) {
-                UNKNOWN -> Color.Transparent
+                HINT_ABSENT, UNKNOWN -> Color.Transparent
                 WRONG -> MaterialTheme.colorScheme.error
                 CORRECT -> MaterialTheme.colorScheme.tertiaryContainer
-                HINT_ABSENT, HINT_PRESENT -> MaterialTheme.colorScheme.outlineVariant
+                HINT_PRESENT -> MaterialTheme.colorScheme.outlineVariant
             }
         )
-        .clickable(enabled = won == Won.NOT_WON) { click(char) },
+        .clickable(enabled = won == Won.NOT_WON && letterStates[lettrePos] == UNKNOWN) { click(char) },
         contentAlignment = Alignment.TopCenter
     ) {
         Text(
             text = char.toString(),
-            color = if (letterStates[lettrePos] == UNKNOWN) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.surface,
+            color = if (letterStates[lettrePos] == UNKNOWN || letterStates[lettrePos] == HINT_ABSENT) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.surface,
             textAlign = TextAlign.Center,
             fontSize = sizes.letterSizeSp.sp,
         )
         if (letterStates[lettrePos] == HINT_ABSENT) {
             Image(
+                modifier = Modifier.padding(2.dp).fillMaxSize(),
                 painter = painterResource(id = R.drawable.barred),
                 contentDescription = null,
-                modifier = Modifier.fillMaxSize(),
                 contentScale = ContentScale.FillBounds
             )
         }
